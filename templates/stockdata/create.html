@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if not created %}
+
+
+
+<form action='.' method='POST'>
+    {% csrf_token %}
+<!--    <input type='text' name='title' placeholder='Input stock name' />-->
+<!--    <textarea type='number' name='content' placeholder='Input price'></textarea>-->
+    {{ form.as_p }}
+    <button type='submit'>Create stockdata</button>
+</form>
+{% else %}
+<p>New Stock Data Created!</p>
+<a href = '/stockdata/{{ stockdata_obj.title }}'>
+    {{ stockdata_obj.title }}, {{ stockdata_obj.content }}
+</a>
+{% endif %}
+{% endblock content %}

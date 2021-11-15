@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Hello {{ users }}!</h1>
+<p> This is a page for {{ stockdata_obj.title }} stock </p>
+<p> {{ stockdata_obj.title }} price is {{ stockdata_obj.content }}</p>
+{% endblock content %}
